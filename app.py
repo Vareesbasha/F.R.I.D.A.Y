@@ -10,7 +10,7 @@ app = Flask(__name__)
 
  
 
-bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
+bot = ChatBot("Friday", storage_adapter="chatterbot.storage.SQLStorageAdapter")
 
 trainer = ChatterBotCorpusTrainer(bot)
 
@@ -32,7 +32,7 @@ def get_bot_response():
 
     userText = request.args.get('msg')
 
-    return str(english_bot.get_response(userText))
+    return str(bot.get_response(userText))
 
  
 
